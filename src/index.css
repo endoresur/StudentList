@@ -1,4 +1,14 @@
 body {
   margin: 0;
   padding: 0;
+  min-width: 375px;
+
+  font-family: 'Geometria', sans-serif;
+
+  background-color: rgba(0.898, 0.898, 0.898, 0.02);
+}
+
+a {
+  text-decoration: none;
+  color: #49C2E8;
 }

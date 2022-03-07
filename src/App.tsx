@@ -1,9 +1,14 @@
 import React from 'react';
+import Header from "./components/Header";
+import {Container} from "./styles/Containers";
 
 function App() {
   return (
     <div>
-      List
+        <Header/>
+        <Container>
+        List
+        </Container>
     </div>
   );
 }
