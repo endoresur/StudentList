@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Authorization from "./components/authorization/Authorization";
-import Main from "./components/main/Main";
+import Main from "./components/Main";
 
 function App() {
 

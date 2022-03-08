@@ -1,6 +1,6 @@
 import React from 'react';
-import {FlexContainer, HeaderContainer, TextContainer} from "../../styles/Containers";
-import {LogoIcon} from "../../styles/GraphicElements";
+import {FlexContainer, HeaderContainer, TextContainer} from "../styles/Containers";
+import {LogoIcon} from "../styles/GraphicElements";
 
 const Header = () => {
     return (

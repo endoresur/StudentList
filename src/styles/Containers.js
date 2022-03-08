@@ -4,12 +4,14 @@ const Container = styled.div`
   position: relative;
   justify-content: ${props => props.jc || ''};
   align-items: ${props => props.ai || 'center'};
-
+  
   margin: 
     ${props => props.mt || 'auto'}
     ${props => props.mr || '130px'}
     ${props => props.mb || 'auto'}
-    ${props => props.ml || '130px'}
+    ${props => props.ml || '130px'};
+  
+  padding: ${props => props.p || ''};   
 `
 
 const FlexContainer = styled(Container)`
@@ -40,8 +42,10 @@ const TextContainer = styled.div`
 `
 
 const InputContainer = styled.div`
-  width: 80%;
-  padding: 15px 20px 15px 20px; 
+  height: 48px;
+  width: ${props => props.w || ''};
+  padding: ${props => props.p || ''}; 
+  margin: ${props => props.m || ''};
 
   background-color: white;
 
