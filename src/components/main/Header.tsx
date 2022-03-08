@@ -1,6 +1,6 @@
 import React from 'react';
-import {FlexContainer, HeaderContainer} from "../styles/Containers";
-import {LogoIcon} from "../styles/GraphicElements";
+import {FlexContainer, HeaderContainer, TextContainer} from "../../styles/Containers";
+import {LogoIcon} from "../../styles/GraphicElements";
 
 const Header = () => {
     return (
@@ -9,7 +9,14 @@ const Header = () => {
                 <div>
                     <LogoIcon/>
                 </div>
-                <div>STUDENTS by <a href='https://github.com/endoresur'>endoresur</a> </div>
+                <TextContainer
+                    fStyle='normal'
+                    fWeight='500'
+                    fSize='20px'
+                    lh='44px'
+                >
+                    STUDENTS by <a href='https://github.com/endoresur'>endoresur</a>
+                </TextContainer>
             </FlexContainer>
         </HeaderContainer>
     );

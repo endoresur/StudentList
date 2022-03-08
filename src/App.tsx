@@ -1,16 +1,16 @@
-import React from 'react';
-import Header from "./components/Header";
-import {Container} from "./styles/Containers";
+import React, {useState} from 'react';
+import Authorization from "./components/authorization/Authorization";
+import Main from "./components/main/Main";
 
 function App() {
-  return (
-    <div>
-        <Header/>
-        <Container>
-        List
-        </Container>
-    </div>
-  );
+
+    const [flag, setFlag] = useState(false);
+
+    return (
+        <div>
+            {flag? <Authorization/> : <Main/>}
+        </div>
+    );
 }
 
 export default App;
