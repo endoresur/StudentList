@@ -5,7 +5,7 @@ import {LogoIcon} from "../styles/GraphicElements";
 const Header = () => {
     return (
         <HeaderContainer>
-            <FlexContainer>
+            <FlexContainer ml='130px' mr='130px'>
                 <div>
                     <LogoIcon/>
                 </div>

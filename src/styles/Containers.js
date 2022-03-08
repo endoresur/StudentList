@@ -1,15 +1,17 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+  width: ${props => props.w || ''};
+  height: ${props => props.h || ''};
+  
   position: relative;
   justify-content: ${props => props.jc || ''};
   align-items: ${props => props.ai || 'center'};
   
-  margin: 
-    ${props => props.mt || 'auto'}
-    ${props => props.mr || '130px'}
-    ${props => props.mb || 'auto'}
-    ${props => props.ml || '130px'};
+  margin-top: ${props => props.mt || '0'};
+  margin-right: ${props => props.mr || '0'};
+  margin-bottom: ${props => props.mb || '0'};
+  margin-left: ${props => props.ml || '0'};
   
   padding: ${props => props.p || ''};   
 `
@@ -54,4 +56,10 @@ const InputContainer = styled.div`
   box-shadow: 0 7px 64px rgba(0, 0, 0, 0.007);
 `
 
-export {Container, FlexContainer, HeaderContainer, TextContainer, InputContainer};
+const ListContainer = styled(InputContainer)`
+  position: absolute;
+  width: 100%;
+  height: auto;
+`
+
+export {Container, FlexContainer, HeaderContainer, TextContainer, InputContainer, ListContainer};
