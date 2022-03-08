@@ -19,6 +19,7 @@ const FlexContainer = styled(Container)`
 `
 
 const HeaderContainer = styled.header`
+  width: 100%;
   height: 85px;
   margin-bottom: 60px;
   
@@ -38,4 +39,15 @@ const TextContainer = styled.div`
   line-height: ${props => props.lh || ''};
 `
 
-export {Container, FlexContainer, HeaderContainer, TextContainer};
+const InputContainer = styled.div`
+  width: 80%;
+  padding: 15px 20px 15px 20px; 
+
+  background-color: white;
+
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 7px 64px rgba(0, 0, 0, 0.007);
+`
+
+export {Container, FlexContainer, HeaderContainer, TextContainer, InputContainer};
