@@ -14,10 +14,9 @@ class StudentList {
         return this.list;
     }
 
-    setList(list: IStudent[]) {
+    set setList(list: IStudent[]) {
         this.list = list;
     }
-
 }
 
 export default new StudentList();

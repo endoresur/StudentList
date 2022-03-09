@@ -36,7 +36,7 @@ const HeaderContainer = styled.header`
   box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07);
 `
 
-const TextContainer = styled.div`
+const TextContainer = styled.div`  
   font-style: ${props => props.fStyle || ''};
   font-weight: ${props => props.fWeight || ''};
   font-size: ${props => props.fSize || ''};

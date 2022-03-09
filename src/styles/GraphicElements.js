@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {colors} from "../types/types";
 
 const LogoIcon = styled.div`
   position: relative;
@@ -23,4 +24,13 @@ const LogoIcon = styled.div`
   }
 `
 
-export {LogoIcon};
+const ColorCircle = styled.div`
+  height: 30px;
+  width: 30px;
+  margin: auto;
+  
+  background-color: ${props => colors.get(props.bc) || ''};  
+  border-radius: 15px;
+`
+
+export {LogoIcon, ColorCircle};
