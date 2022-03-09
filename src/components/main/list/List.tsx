@@ -3,17 +3,17 @@ import {Container, FlexContainer, ListContainer} from "../../../styles/Container
 import {IStudent} from "../../../types/types";
 import axios from "axios";
 import Student from "./Student";
+import {observer} from "mobx-react-lite";
+import StudentList from "../../../store/StudentList";
+import {toJS} from "mobx";
 
-const List = () => {
+const List = observer(() => {
 
     const [students, setStudents] = useState<IStudent[]>([]);
 
     useEffect(() => {
-        const apiUrl = 'https://front-assignment-api.2tapp.cc/api/persons';
-        axios.get(apiUrl).then((resp) => {
-            setStudents(resp.data.students);
-        })
-    }, [])
+            setStudents(StudentList.getList.map((el) => {return toJS(el)}));
+    }, [StudentList.getList])
 
     return (
         <>
@@ -27,12 +27,12 @@ const List = () => {
             <Container>
                 <ListContainer>
                     {students.map((student) => {
-                        return(<Student student={student}/>)
+                        return(<Student student={student} key={student.id}/>)
                     })}
                 </ListContainer>
             </Container>
         </>
     );
-};
+});
 
 export default List;

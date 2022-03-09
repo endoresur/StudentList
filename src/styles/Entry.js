@@ -9,11 +9,7 @@ const Entry = styled.div`
   justify-content: flex-start;
   
   height: 40px;
-  margin: 25px 20px 25px 20px;
-
-  &:nth-child(n) {   
-  }
-  
+  margin: 25px 20px 25px 20px;  
     
     img {
       height: 40px; 
