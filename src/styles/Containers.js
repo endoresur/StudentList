@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {device} from "../types/types";
 
 const Container = styled.div`
   width: ${props => props.w || ''};
@@ -14,6 +15,31 @@ const Container = styled.div`
   margin-left: ${props => props.ml || '0'};
   
   padding: ${props => props.p || ''};   
+`
+
+const WrapperContainer = styled(Container)`
+  height: 100%;
+  margin: 0 130px 0 130px;
+  
+  @media ${device.desktopL} {
+    margin: 0 700px 0 700px;
+  }
+  
+  @media ${device.desktop} {
+    margin: 0 500px 0 500px;
+  }
+  
+  @media ${device.laptopL} {
+    margin: 0 300px 0 300px;
+  }
+  
+  @media ${device.laptop} {
+    margin: 0 130px 0 130px;
+  }   
+  
+  @media ${device.tablet} {
+    margin: 0;
+  }
 `
 
 const FlexContainer = styled(Container)`
@@ -62,4 +88,12 @@ const ListContainer = styled(InputContainer)`
   height: auto;
 `
 
-export {Container, FlexContainer, HeaderContainer, TextContainer, InputContainer, ListContainer};
+export {
+    Container,
+    FlexContainer,
+    HeaderContainer,
+    TextContainer,
+    InputContainer,
+    ListContainer,
+    WrapperContainer,
+};

@@ -22,7 +22,7 @@ export const specialty = new Map([
     ['kn', 'Компьютерные науки'],
 ]);
 
-export const alfabet = new Map([
+export const alphabet = new Map([
     ['a', 'А'], ['b', 'Б'], ['v', 'В'], ['g', 'Г'],
     ['d', 'Д'], ['e', 'Е'], ['z', 'З'], ['i', 'И'],
     ['j', 'Й'], ['k', 'К'], ['l', 'Л'], ['m', 'М'],
@@ -39,3 +39,22 @@ export const colors = new Map([
     ['red', '#E25B5B'],
     ['orange', '#EFA638'],
 ])
+
+export const size = {
+    mobileM: '375px',
+    mobileL: '830px',
+    tablet: '1028px',
+    laptop: '1440px',
+    laptopL: '1880px',
+    desktop: '2560px'
+}
+
+export const device = {
+    mobileM: `(max-width: ${size.mobileM})`,
+    mobileL: `(max-width: ${size.mobileL})`,
+    tablet: `(max-width: ${size.tablet})`,
+    laptop: `(max-width: ${size.laptop})`,
+    laptopL: `(max-width: ${size.laptopL})`,
+    desktop: `(max-width: ${size.desktop})`,
+    desktopL: `(min-width: ${size.desktop})`
+};

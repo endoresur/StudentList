@@ -1,4 +1,4 @@
-import {alfabet, IStudent, specialty} from "../../types/types";
+import {alphabet, IStudent, specialty} from "../../types/types";
 
 export const fieldEdit = (list: IStudent[]): IStudent[] => {
     return list.map((el) => {
@@ -19,8 +19,8 @@ const specialtyEdit = (str: string): string => {
 const groupEdit = (group: string): string => {
     let arr = group.split('');
     arr = arr.map((char) => {
-        if(alfabet.has(char)) {
-            char = String(alfabet.get(char));
+        if(alphabet.has(char)) {
+            char = String(alphabet.get(char));
         }
         return char;
     })

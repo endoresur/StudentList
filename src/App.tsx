@@ -1,15 +1,12 @@
-import React, {useState} from 'react';
-import Authorization from "./components/authorization/Authorization";
+import React from 'react';
 import Main from "./components/Main";
 
 function App() {
 
-    const [flag, setFlag] = useState(false);
-
     return (
-        <div>
-            {flag? <Authorization/> : <Main/>}
-        </div>
+        <>
+            <Main/>
+        </>
     );
 }
 

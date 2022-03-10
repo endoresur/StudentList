@@ -6,7 +6,7 @@ const Entry = styled.div`
   flex-direction: row;
   
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   
   height: 40px;
   margin: 25px 20px 25px 20px;

@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   min-width: 375px;
+  width: 100%;
 
   font-family: 'Geometria', sans-serif;
 
