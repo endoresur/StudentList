@@ -4,7 +4,6 @@ import {IStudent} from "../../../types/types";
 import Student from "./Student";
 import {observer} from "mobx-react-lite";
 import StudentList from "../../../store/StudentList";
-import {toJS} from "mobx";
 
 const List = observer(() => {
 
@@ -12,9 +11,9 @@ const List = observer(() => {
 
     useEffect(() => {
         setStudents(StudentList.getList.map((el) => {
-            return toJS(el)
+            return el;
         }));
-    }, [StudentList.getList])
+    }, [StudentList.getList.length])
 
     return (
         <>

@@ -24,6 +24,13 @@ const LogoIcon = styled.div`
   }
 `
 
+const AvatarIcon = styled.img`
+  height: 40px;
+  width: 40px;
+
+  border-radius: 50%;
+`
+
 const ColorCircle = styled.div`
   height: 30px;
   width: 30px;
@@ -33,4 +40,24 @@ const ColorCircle = styled.div`
   border-radius: 15px;
 `
 
-export {LogoIcon, ColorCircle};
+const TrashIcon = styled.div`
+  height: 30px;
+  width: 30px;
+  
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  box-shadow: 0 0 16.3715px rgba(0, 0, 0, 0.1);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  img {
+    max-height: 15px;
+    max-width: 15px;    
+    border-radius: 0;
+  }
+  
+`
+
+export {LogoIcon, ColorCircle, TrashIcon, AvatarIcon};

@@ -5,7 +5,7 @@ import menu from "../../../assets/images/dropdown.png"
 const SelectForm = () => {
     return (
         <InputContainer w='20%' m='0 0 0 20px' >
-            <FlexContainer jc='space-between' ml='0' mr='0' p='0 20px 0 20px'>
+            <FlexContainer jc='space-between' p='0 20px 0 20px'>
                 <TextContainer
                     fStyle='normal'
                     fWeight='500'
