@@ -21,24 +21,24 @@ const WrapperContainer = styled(Container)`
   height: 100%;
   margin: 0 130px 0 130px;
   
-  @media ${device.desktopL} {
-    margin: 0 700px 0 700px;
-  }
-  
   @media ${device.desktop} {
-    margin: 0 500px 0 500px;
+    margin: 0 200px 0 200px;
   }
   
   @media ${device.laptopL} {
-    margin: 0 300px 0 300px;
+    margin: 0 130px 0 130px;
   }
   
   @media ${device.laptop} {
-    margin: 0 130px 0 130px;
-  }   
+    margin: 0 50px 0 50px;
+  }
   
   @media ${device.tablet} {
     margin: 0;
+  }   
+  
+  @media ${device.mobileL} {
+    background-color: red;    
   }
 `
 
@@ -83,7 +83,7 @@ const InputContainer = styled.div`
 `
 
 const ListContainer = styled(InputContainer)`
-  position: absolute;
+  position: relative;
   width: 100%;
   height: auto;
 `
