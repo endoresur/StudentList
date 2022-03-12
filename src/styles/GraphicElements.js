@@ -21,20 +21,20 @@ const LogoIcon = styled.div`
 
     border: 5px solid #49C2E8;
     border-radius: 50%;
-  }
+  }  
 `
 
 const AvatarIcon = styled.img`
   height: 40px;
   width: 40px;
-
+  margin: 15px;
   border-radius: 50%;
 `
 
 const ColorCircle = styled.div`
   height: 30px;
   width: 30px;
-  margin: auto;
+  margin-left: 50px;
   
   background-color: ${props => colors.get(props.bc) || ''};  
   border-radius: 15px;
@@ -44,9 +44,15 @@ const TrashIcon = styled.div`
   height: 30px;
   width: 30px;
   
+  margin: 15px;
+  
   background-color: #FFFFFF;
   border-radius: 15px;
   box-shadow: 0 0 16.3715px rgba(0, 0, 0, 0.1);
+  
+  &:hover {
+    box-shadow: 0 0 16.5px rgba(0, 0, 0, 0.15);
+  }
   
   display: flex;
   justify-content: center;

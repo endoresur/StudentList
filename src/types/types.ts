@@ -41,11 +41,12 @@ export const colors = new Map([
 ])
 
 export const size = {
+    mobileS: '320px',
     mobileM: '375px',
-    mobileL: '830px',
-    tablet: '1028px',
-    laptop: '1440px',
-    laptopL: '1880px',
+    mobileL: '655px',
+    tablet: '768px',
+    laptop: '1024px',
+    laptopL: '1440px',
     desktop: '2560px'
 }
 

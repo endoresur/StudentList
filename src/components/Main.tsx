@@ -7,9 +7,11 @@ const Main = () => {
     return (
         <>
             <Header/>
-            <WrapperContainer>
-                <ListPage/>
-            </WrapperContainer>
+            <main>
+                <WrapperContainer>
+                    <ListPage/>
+                </WrapperContainer>
+            </main>
         </>
     );
 };
