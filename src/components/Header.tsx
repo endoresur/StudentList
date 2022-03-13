@@ -20,7 +20,7 @@ const Header = () => {
                     >
                         STUDENTS
                         {!isMobile &&
-                        <>by <a href='https://github.com/endoresur'>endoresur</a></>
+                        <> by <a href='https://github.com/endoresur'>endoresur</a></>
                         }
                     </TextContainer>
                 </FlexContainer>

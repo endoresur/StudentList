@@ -11,10 +11,9 @@ const Main = observer(() => {
 
     const [width, height] = useWindowSize();
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         AppOptions.width = width;
-        AppOptions.defineMobility();
-    }, [width, StudentList.getList.length])
+    }, [width, StudentList.getList.length, AppOptions.isMobile])
 
     return (
         <>

@@ -47,14 +47,15 @@ export const colors = new Map([
 export const size = {
     mobileS: '320',
     mobileM: '375',
-    mobileL: '655',
+    mobileL: '425',
     tablet: '768',
     laptop: '1024',
-    laptopL: '1430',
+    laptopL: '1440',
     desktop: '2560'
 }
 
 export const device = {
+    mobileS: `(max-width: ${size.mobileS}px)`,
     mobileM: `(max-width: ${size.mobileM}px)`,
     mobileL: `(max-width: ${size.mobileL}px)`,
     tablet: `(max-width: ${size.tablet}px)`,

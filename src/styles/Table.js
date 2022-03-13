@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Table = styled.table`
   width: 100%;
-  position: relative;
+  //position: relative;
 
   background-color: white;
   border: none;
@@ -28,9 +28,9 @@ const Table = styled.table`
   }
 
   td { // ячейка
-    width: 26%;
+    white-space: normal;
     position: relative;
-    top: -20px;      
+    top: -20px;          
     
     font-style: normal;
     font-weight: 500;
@@ -39,6 +39,10 @@ const Table = styled.table`
     
     &:first-child{      
       width: 50px;
+    }
+    
+    &:last-child{
+      width: 200px;
     }
     
     //background-color: blueviolet;

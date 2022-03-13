@@ -32,9 +32,9 @@ const SelectForm = () => {
     const Mobile = () => {
         return (
             <InputContainer w='54px' m='0 0 0 15px'>
-                <Container w='100%' h='100%' p='15px 15px 15px 15px'>
+                <FlexContainer jc='center' w='100%' h='100%' >
                     <img src={menu} height='20px'/>
-                </Container>
+                </FlexContainer>
             </InputContainer>
         );
     }

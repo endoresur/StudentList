@@ -23,7 +23,7 @@ class AppOptions {
     }
 
     defineMobility() {
-        this.mobile = this.screenWidth <= Number(size.mobileL);
+        this.mobile = this.screenWidth <= Number(size.tablet);
     }
 }
 
