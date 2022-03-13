@@ -1,4 +1,4 @@
-import {makeAutoObservable, configure} from "mobx";
+import {makeAutoObservable, configure, toJS} from "mobx";
 import {IStudent} from "../types/types";
 import {extract} from "../components/utilities/Extractor";
 
@@ -11,6 +11,10 @@ class StudentList {
 
     constructor() {
         makeAutoObservable(this);
+        this.updateList();
+    }
+
+    private updateList() {
         extract();
     }
 

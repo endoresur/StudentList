@@ -1,21 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import {IStudent} from "../../../types/types";
-import StudentEntry from "./StudentEntry";
-import {observer} from "mobx-react-lite";
-import StudentList from "../../../store/StudentList";
-import {Table} from "../../../styles/Table";
+import React from 'react';
+import TableEntry from "./TableEntry";
+import {Table} from "../../../../../../styles/Table";
+import {StudentComponentProps} from "../../../../../../types/types";
 
-const List = observer(() => {
-
-    const [students, setStudents] = useState<IStudent[]>([]);
-
-    useEffect(() => {
-        setStudents(StudentList.getList.map((el) => {
-            return el;
-        }));
-
-    }, [StudentList.getList.length])
-
+const DesktopList: React.FC<StudentComponentProps> = ({students}) => {
     return (
         <>
             <Table>
@@ -34,7 +22,7 @@ const List = observer(() => {
                 {students.map((student) => {
                     return (
                         <tr key={student.id}>
-                            <StudentEntry student={student} key={student.id}/>
+                            <TableEntry student={student} key={student.id}/>
                         </tr>
                     )
                 })}
@@ -42,6 +30,6 @@ const List = observer(() => {
             </Table>
         </>
     );
-});
+};
 
-export default List;
+export default DesktopList;

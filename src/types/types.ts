@@ -16,6 +16,10 @@ export interface StudentProps {
     student: IStudent,
 }
 
+export interface StudentComponentProps {
+    students: IStudent[],
+}
+
 export const specialty = new Map([
     ['kb', 'Компьютерная безопасность'],
     ['mt', 'Машиностоительные технологии'],
@@ -41,21 +45,21 @@ export const colors = new Map([
 ])
 
 export const size = {
-    mobileS: '320px',
-    mobileM: '375px',
-    mobileL: '655px',
-    tablet: '768px',
-    laptop: '1024px',
-    laptopL: '1440px',
-    desktop: '2560px'
+    mobileS: '320',
+    mobileM: '375',
+    mobileL: '655',
+    tablet: '768',
+    laptop: '1024',
+    laptopL: '1430',
+    desktop: '2560'
 }
 
 export const device = {
-    mobileM: `(max-width: ${size.mobileM})`,
-    mobileL: `(max-width: ${size.mobileL})`,
-    tablet: `(max-width: ${size.tablet})`,
-    laptop: `(max-width: ${size.laptop})`,
-    laptopL: `(max-width: ${size.laptopL})`,
-    desktop: `(max-width: ${size.desktop})`,
-    desktopL: `(min-width: ${size.desktop})`
+    mobileM: `(max-width: ${size.mobileM}px)`,
+    mobileL: `(max-width: ${size.mobileL}px)`,
+    tablet: `(max-width: ${size.tablet}px)`,
+    laptop: `(max-width: ${size.laptop}px)`,
+    laptopL: `(max-width: ${size.laptopL}px)`,
+    desktop: `(max-width: ${size.desktop}px)`,
+    desktopL: `(min-width: ${size.desktop}px)`
 };

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Button = styled.button`
   height: 50px;
-  width: 340px;
+  width: ${props => props.w || '340px'};
   
   color: white;
   

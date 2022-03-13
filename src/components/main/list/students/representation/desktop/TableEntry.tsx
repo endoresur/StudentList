@@ -1,11 +1,11 @@
 import React from 'react';
-import {StudentProps} from "../../../types/types";
-import {FlexContainer} from "../../../styles/Containers";
-import {AvatarIcon, ColorCircle, TrashIcon} from "../../../styles/GraphicElements";
-import trash from "../../../assets/images/trash.png";
-import StudentList from "../../../store/StudentList";
+import {StudentProps} from "../../../../../../types/types";
+import {FlexContainer} from "../../../../../../styles/Containers";
+import {AvatarIcon, ColorCircle, TrashIcon} from "../../../../../../styles/GraphicElements";
+import trash from "../../../../../../assets/images/trash.png";
+import StudentList from "../../../../../../store/StudentList";
 
-const StudentEntry: React.FC<StudentProps> = ({student}) => {
+const TableEntry: React.FC<StudentProps> = ({student}) => {
 
     const handleDelete = () => {
         StudentList.deleteStudent(student);
@@ -31,4 +31,4 @@ const StudentEntry: React.FC<StudentProps> = ({student}) => {
     );
 };
 
-export default StudentEntry;
+export default TableEntry;

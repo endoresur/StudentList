@@ -19,10 +19,10 @@ const Container = styled.div`
 
 const WrapperContainer = styled(Container)`
   height: 100%;
-  margin: 0 130px 0 130px;
+  margin: 0 500px 0 500px;
   
   @media ${device.desktop} {
-    margin: 0 200px 0 200px;
+    margin: 0 250px 0 250px;
   }
   
   @media ${device.laptopL} {
@@ -30,28 +30,27 @@ const WrapperContainer = styled(Container)`
   }
   
   @media ${device.laptop} {
-    margin: 0 50px 0 50px;
+    margin: 0 40px 0 40px;
   }
   
   @media ${device.tablet} {
-    margin: 0;
+    margin: 0 20px 0 20px;
   }   
   
   @media ${device.mobileL} {
-    background-color: red;    
+    //background-color: red;    
   }
 `
 
 const FlexContainer = styled(Container)`
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: ${props => props.dir || 'row'};
 `
 
 const HeaderContainer = styled.header`
   width: 100%;
   height: 85px;
-  margin-bottom: 60px;
   
   font-style: normal;
   font-weight: 500;
@@ -82,18 +81,11 @@ const InputContainer = styled.div`
   box-shadow: 0 7px 64px rgba(0, 0, 0, 0.007);
 `
 
-const ListContainer = styled(InputContainer)`
-  position: relative;
-  width: 100%;
-  height: auto;
-`
-
 export {
     Container,
     FlexContainer,
     HeaderContainer,
     TextContainer,
     InputContainer,
-    ListContainer,
     WrapperContainer,
 };
