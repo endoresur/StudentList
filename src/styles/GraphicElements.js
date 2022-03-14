@@ -5,7 +5,7 @@ const LogoIcon = styled.div`
   position: relative;
   width: 42px;
   height: 42px;  
-  margin-right: 45px;
+  margin-right: ${props => props.mini? '26px': '45px'};
   
   border: 5px solid #49C2E8;
   border-radius: 50%;
@@ -27,24 +27,20 @@ const LogoIcon = styled.div`
 const AvatarIcon = styled.img`
   height: 40px;
   width: 40px;
-  margin: 15px;
   border-radius: 50%;
 `
 
 const ColorCircle = styled.div`
-  height: 30px;
-  width: 30px;
-  margin-left: 50px;
+  height: ${props => props.mini? '12px' : '30px'};
+  width: ${props => props.mini? '12px' : '30px'};
   
-  background-color: ${props => colors.get(props.bc) || ''};  
+  background-color: ${props => colors.get(props.bc) || 'black'};  
   border-radius: 15px;
 `
 
 const TrashIcon = styled.div`
   height: 30px;
   width: 30px;
-  
-  margin: 15px;
   
   background-color: #FFFFFF;
   border-radius: 15px;

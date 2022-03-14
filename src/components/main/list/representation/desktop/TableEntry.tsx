@@ -1,15 +1,10 @@
 import React from 'react';
-import {StudentProps} from "../../../../../../types/types";
-import {FlexContainer} from "../../../../../../styles/Containers";
-import {AvatarIcon, ColorCircle, TrashIcon} from "../../../../../../styles/GraphicElements";
-import trash from "../../../../../../assets/images/trash.png";
-import StudentList from "../../../../../../store/StudentList";
+import {StudentProps} from "../../../../../types/types";
+import {FlexContainer} from "../../../../../styles/Containers";
+import {AvatarIcon, ColorCircle} from "../../../../../styles/GraphicElements";
+import DeleteButton from "../../../../utilities/DeleteButton";
 
 const TableEntry: React.FC<StudentProps> = ({student}) => {
-
-    const handleDelete = () => {
-        StudentList.deleteStudent(student);
-    }
 
     return (
             <>
@@ -21,9 +16,9 @@ const TableEntry: React.FC<StudentProps> = ({student}) => {
                 <td>
                     <FlexContainer jc='space-between'>
                         {student.rating}
-                        <FlexContainer>
+                        <FlexContainer jc='space-between' w='90px'>
                             <ColorCircle bc={student.color}/>
-                            <TrashIcon onClick={handleDelete}><img src={trash}/></TrashIcon>
+                            <DeleteButton student={student}/>
                         </FlexContainer>
                     </FlexContainer>
                 </td>

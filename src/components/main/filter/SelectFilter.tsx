@@ -1,9 +1,9 @@
 import React, {useLayoutEffect, useState} from 'react';
-import {Container, FlexContainer, InputContainer, TextContainer} from "../../../../styles/Containers";
-import menu from "../../../../assets/images/dropdown.png"
-import AppOptions from "../../../../store/AppOptions";
+import {FlexContainer, InputContainer, TextContainer} from "../../../styles/Containers";
+import menu from "../../../assets/images/dropdown.png"
+import AppOptions from "../../../store/AppOptions";
 
-const SelectForm = () => {
+const SelectFilter = () => {
 
     const [isMobile, setIsMobile] = useState<boolean>(false);
 
@@ -32,7 +32,7 @@ const SelectForm = () => {
     const Mobile = () => {
         return (
             <InputContainer w='54px' m='0 0 0 15px'>
-                <FlexContainer jc='center' w='100%' h='100%' >
+                <FlexContainer jc='center' w='54px' h='100%' >
                     <img src={menu} height='20px'/>
                 </FlexContainer>
             </InputContainer>
@@ -44,4 +44,4 @@ const SelectForm = () => {
     );
 };
 
-export default SelectForm;
+export default SelectFilter;

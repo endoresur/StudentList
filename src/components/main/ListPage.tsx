@@ -1,6 +1,6 @@
 import React from 'react';
 import Filter from "./filter/Filter";
-import List from "./students/List";
+import List from "./list/List";
 import Head from "./head/Head";
 
 const ListPage = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import TableEntry from "./TableEntry";
-import {Table} from "../../../../../../styles/Table";
-import {StudentComponentProps} from "../../../../../../types/types";
+import {Table} from "../../../../../styles/Table";
+import {StudentComponentProps} from "../../../../../types/types";
 
 const DesktopList: React.FC<StudentComponentProps> = ({students}) => {
     return (
@@ -17,7 +17,6 @@ const DesktopList: React.FC<StudentComponentProps> = ({students}) => {
                     <th>Рейтинг</th>
                 </tr>
                 </thead>
-
                 <tbody>
                 {students.map((student) => {
                     return (

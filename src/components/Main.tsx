@@ -1,6 +1,6 @@
-import React, {useEffect, useLayoutEffect} from 'react';
+import React, {useEffect} from 'react';
 import Header from "./Header";
-import ListPage from "./main/list/ListPage";
+import ListPage from "./main/ListPage";
 import {WrapperContainer} from "../styles/Containers";
 import AppOptions from "../store/AppOptions";
 import {observer} from "mobx-react-lite";

@@ -37,8 +37,8 @@ const WrapperContainer = styled(Container)`
     margin: 0 20px 0 20px;
   }   
   
-  @media ${device.mobileL} {
-    //background-color: red;    
+  @media ${device.mobileS} {
+    margin: 0 10px 0 10px;
   }
 `
 

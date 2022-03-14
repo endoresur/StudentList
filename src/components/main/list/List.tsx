@@ -1,9 +1,9 @@
 import React, {useEffect, useLayoutEffect, useState} from 'react';
-import {IStudent} from "../../../../types/types";
-import StudentList from "../../../../store/StudentList";
+import {IStudent} from "../../../types/types";
+import StudentList from "../../../store/StudentList";
 import DesktopList from "./representation/desktop/DesktopList";
 import MobileList from "./representation/mobile/MobileList";
-import AppOptions from "../../../../store/AppOptions";
+import AppOptions from "../../../store/AppOptions";
 
 const List = () => {
 
@@ -24,8 +24,7 @@ const List = () => {
                 <MobileList students={students}/>
             ) : (
                 <DesktopList students={students}/>
-
-                )}
+            )}
         </>
     );
 };

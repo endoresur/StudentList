@@ -11,7 +11,7 @@ const Header = () => {
         <HeaderContainer>
             <WrapperContainer>
                 <FlexContainer>
-                    <LogoIcon/>
+                    <LogoIcon mini={isMobile}/>
                     <TextContainer
                         fStyle='normal'
                         fWeight='500'
