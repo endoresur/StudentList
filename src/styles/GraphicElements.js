@@ -44,7 +44,7 @@ const TrashIcon = styled.div`
   
   background-color: #FFFFFF;
   border-radius: 15px;
-  box-shadow: 0 0 16.3715px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 16.3715px rgba(0, 0, 0, 0.12);
   
   &:hover {
     box-shadow: 0 0 16.5px rgba(0, 0, 0, 0.15);

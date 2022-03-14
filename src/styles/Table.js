@@ -2,19 +2,16 @@ import styled from "styled-components";
 
 const Table = styled.table`
   width: 100%;
-
+  margin-top: 80px;
+  
   background-color: white;
   border: none;
   border-radius: 6px;
-  box-shadow: 0 7px 64px rgba(0, 0, 0, 0.007);
-  
+  box-shadow: 0 7px 64px rgba(0, 0, 0, 0.007);  
   border-spacing: 10px;
-  
-  margin-top: 70px;
   
   tr { // строчка
     vertical-align: middle;
-    height: 40px;
   }
   
   th { // заголовок
@@ -29,17 +26,17 @@ const Table = styled.table`
     line-height: 20px;
   }
 
-  td { // ячейка
+  td { // ячейка    
     white-space: normal;
     position: relative;
-    top: -40px;
-    padding-bottom: 20px;
+    top: -20px;
+    padding-bottom: 10px;
 
     font-style: normal;
     font-weight: 500;
     font-size: 15px;
-    line-height: 20px;   
-    
+    line-height: 20px;
+
     &:first-child{   
       width: 50px;
       padding-left: 15px;
@@ -48,7 +45,6 @@ const Table = styled.table`
     &:last-child{
       width: 180px;
       padding-right: 20px;
-      padding-left: 10px;
     }
   }
 `

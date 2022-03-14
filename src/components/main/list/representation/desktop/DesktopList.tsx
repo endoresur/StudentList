@@ -7,7 +7,7 @@ const DesktopList: React.FC<StudentComponentProps> = ({students}) => {
     return (
         <>
             <Table>
-                <thead>
+                <tbody>
                 <tr>
                     <th> </th>
                     <th>ФИО</th>
@@ -16,8 +16,6 @@ const DesktopList: React.FC<StudentComponentProps> = ({students}) => {
                     <th>Возраст</th>
                     <th>Рейтинг</th>
                 </tr>
-                </thead>
-                <tbody>
                 {students.map((student) => {
                     return (
                         <tr key={student.id}>
@@ -28,7 +26,8 @@ const DesktopList: React.FC<StudentComponentProps> = ({students}) => {
                 </tbody>
             </Table>
         </>
-    );
+    )
+        ;
 };
 
 export default DesktopList;
