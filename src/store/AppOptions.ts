@@ -2,28 +2,28 @@ import {makeAutoObservable} from "mobx"
 import {size} from "../types/types";
 
 class AppOptions {
-    private screenWidth: number = 0;
-    private mobile: boolean = true;
+    private _screenWidth: number = 0;
+    private _mobile: boolean = true;
 
     constructor() {
         makeAutoObservable(this);
     }
 
     get width(): number {
-        return this.screenWidth;
+        return this._screenWidth;
     }
 
     set width(width: number) {
-        this.screenWidth = width;
+        this._screenWidth = width;
         this.defineMobility();
     }
 
     get isMobile(): boolean {
-        return this.mobile;
+        return this._mobile;
     }
 
     defineMobility() {
-        this.mobile = this.screenWidth <= Number(size.tablet);
+        this._mobile = this._screenWidth <= Number(size.tablet);
     }
 }
 

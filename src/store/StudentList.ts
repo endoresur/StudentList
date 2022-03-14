@@ -7,7 +7,8 @@ configure({
 })
 
 class StudentList {
-    private list: IStudent[] = [];
+    private _list: IStudent[] = [];
+    private _filteredList: IStudent[] = [];
 
     constructor() {
         makeAutoObservable(this);
@@ -19,17 +20,29 @@ class StudentList {
     }
 
     get getList(): IStudent[] {
-        return this.list;
+        return this._filteredList;
     }
 
     set setList(list: IStudent[]) {
-        this.list = list;
+        this._list = list;
+        this._filteredList = this._list;
     }
 
     deleteStudent(student: IStudent) {
-        let index = this.list.indexOf(student);
-        this.list.splice(index, 1);
+        let index = this._filteredList.indexOf(student);
+        this._filteredList.splice(index, 1);
     }
+
+    set filterOfList(value: string) {
+        if (value.length === 0) {
+            this._filteredList = this._list;
+            return;
+        }
+        this._filteredList = this._list.filter(student => {
+            return student.name.toLowerCase().includes(value.toLowerCase());
+        })
+    }
+
 }
 
 export default new StudentList();
