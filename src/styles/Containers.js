@@ -44,6 +44,7 @@ const WrapperContainer = styled(Container)`
 
 const FlexContainer = styled(Container)`
   height: 100%;
+  position: relative;
   display: flex;
   flex-direction: ${props => props.dir || 'row'};
 `
@@ -73,9 +74,10 @@ const InputContainer = styled.div`
   width: ${props => props.w || ''};
   padding: ${props => props.p || ''}; 
   margin: ${props => props.m || ''};
+  
+  cursor: ${props => props.pointer? 'pointer' : ''};
 
   background-color: white;
-
   border: none;
   border-radius: 6px;
   box-shadow: 0 7px 64px rgba(0, 0, 0, 0.007);

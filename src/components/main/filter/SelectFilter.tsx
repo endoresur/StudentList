@@ -2,19 +2,39 @@ import React, {useLayoutEffect, useState} from 'react';
 import {FlexContainer, InputContainer, TextContainer} from "../../../styles/Containers";
 import menu from "../../../assets/images/dropdown.png"
 import AppOptions from "../../../store/AppOptions";
+import DropDownList from "./DropDownList";
 
 const SelectFilter = () => {
 
     const [isMobile, setIsMobile] = useState<boolean>(false);
+    const [hover, setHover] = useState<boolean>(false);
 
     useLayoutEffect(() => {
         setIsMobile(AppOptions.isMobile);
     }, [AppOptions.width])
 
-    const Desktop = () => {
-        return (
-            <InputContainer w='25%' m='0 0 0 20px'>
-                <FlexContainer jc='space-between' p='0 20px 0 20px'>
+    const handleHover = () => {
+        setHover(true);
+    }
+
+    const handleLeave = () => {
+        setHover(false);
+    }
+
+    return (
+        <InputContainer
+            pointer
+            m='0 0 0 17px'
+            w={isMobile ? '54px' : '180px'}
+            onMouseEnter={handleHover}
+            onMouseLeave={handleLeave}
+        >
+            <FlexContainer
+                jc={isMobile ? 'center' : 'space-between'}
+                p={isMobile ? '' : '0 20px 0 20px'}
+            >
+                {hover && <DropDownList/>}
+                {!isMobile &&
                     <TextContainer
                         fStyle='normal'
                         fWeight='500'
@@ -23,24 +43,10 @@ const SelectFilter = () => {
                     >
                         Имя Я-А
                     </TextContainer>
-                    <img src={menu} height='20px'/>
-                </FlexContainer>
-            </InputContainer>
-        );
-    }
-
-    const Mobile = () => {
-        return (
-            <InputContainer w='54px' m='0 0 0 15px'>
-                <FlexContainer jc='center' w='54px' h='100%' >
-                    <img src={menu} height='20px'/>
-                </FlexContainer>
-            </InputContainer>
-        );
-    }
-
-    return (
-        <>{isMobile ? (<Mobile/>) : (<Desktop/>)}</>
+                }
+                <img src={menu} height='20px'/>
+            </FlexContainer>
+        </InputContainer>
     );
 };
 

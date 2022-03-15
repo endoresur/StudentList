@@ -11,7 +11,7 @@ const InputFilter = () => {
     }
 
     return (
-        <InputContainer w='100%' p='0 20px 0 20px'>
+        <InputContainer w='85%' p='0 20px 0 20px'>
             <FlexContainer>
                 <img src={search} height='20px'/>
                 <InputText
