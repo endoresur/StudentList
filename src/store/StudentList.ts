@@ -1,5 +1,5 @@
-import {makeAutoObservable, configure} from "mobx";
-import {IStudent} from "../types/types";
+import {configure, makeAutoObservable} from "mobx";
+import {filterDirection, filterOptions, filterType, IFilterOption, IStudent} from "../types/types";
 import {extract} from "../components/utilities/Extractor";
 
 configure({
@@ -9,6 +9,7 @@ configure({
 class StudentList {
     private _list: IStudent[] = [];
     private _filteredList: IStudent[] = [];
+    private _filter: IFilterOption[] = filterOptions;
 
     constructor() {
         makeAutoObservable(this);
@@ -33,7 +34,7 @@ class StudentList {
         this._filteredList.splice(index, 1);
     }
 
-    set filterOfList(value: string) {
+    search(value: string) {
         if (value.length === 0) {
             this._filteredList = this._list;
             return;
@@ -41,6 +42,47 @@ class StudentList {
         this._filteredList = this._list.filter(student => {
             return student.name.toLowerCase().includes(value.toLowerCase());
         })
+    }
+
+    get filter() {
+        return this._filter;
+    }
+
+    changeFilter(id: number) {
+        this._filter = this._filter.map((element) => {
+            element.checked = false;
+            if (element.id === id) {
+                element.checked = true;
+                this.setFilter = element;
+            }
+            return element;
+        })
+    }
+
+    set setFilter(filter: IFilterOption) {
+        this._filteredList.sort((first, second) => {
+            if (filter.direction === filterDirection.default) {
+                return first.id - second.id;
+            }
+            if (filter.type === filterType.age) {
+                if (filter.direction === filterDirection.moreToLess) {
+                    return Number(second.birthday) - Number(first.birthday);
+                }
+                return Number(first.birthday) - Number(second.birthday);
+            } else if (filter.type === filterType.name) {
+                if (filter.direction === filterDirection.moreToLess) {
+                    return first.name.localeCompare(second.name);
+                }
+                return second.name.localeCompare(first.name);
+            } else if (filter.type === filterType.rating) {
+                if (filter.direction === filterDirection.moreToLess) {
+                    return second.rating - first.rating;
+                }
+                return first.rating - second.rating;
+            }
+            return 0;
+        })
+
     }
 
 }

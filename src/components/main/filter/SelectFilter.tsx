@@ -3,15 +3,19 @@ import {FlexContainer, InputContainer, TextContainer} from "../../../styles/Cont
 import menu from "../../../assets/images/dropdown.png"
 import AppOptions from "../../../store/AppOptions";
 import DropDownList from "./DropDownList";
+import StudentList from "../../../store/StudentList";
 
 const SelectFilter = () => {
 
     const [isMobile, setIsMobile] = useState<boolean>(false);
     const [hover, setHover] = useState<boolean>(false);
 
+    // @ts-ignore
+    const choice: string = StudentList.filter.find(option => option.checked == true).text;
+
     useLayoutEffect(() => {
         setIsMobile(AppOptions.isMobile);
-    }, [AppOptions.width])
+    }, [AppOptions.width, StudentList.filter])
 
     const handleHover = () => {
         setHover(true);
@@ -28,6 +32,7 @@ const SelectFilter = () => {
             w={isMobile ? '54px' : '180px'}
             onMouseEnter={handleHover}
             onMouseLeave={handleLeave}
+            onClick={handleLeave}
         >
             <FlexContainer
                 jc={isMobile ? 'center' : 'space-between'}
@@ -41,7 +46,7 @@ const SelectFilter = () => {
                         fSize='12px'
                         lh='15px'
                     >
-                        Имя Я-А
+                        {choice}
                     </TextContainer>
                 }
                 <img src={menu} height='20px'/>

@@ -7,7 +7,7 @@ import StudentList from "../../../store/StudentList";
 const InputFilter = () => {
 
     const handleChange = (value: string) => {
-        StudentList.filterOfList = value;
+        StudentList.search(value);
     }
 
     return (
