@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const DropDown = styled.div`
-  width: 100%;
+  width: 170px;
   height: auto;
   position: absolute;
   top: 0;
@@ -11,7 +11,7 @@ const DropDown = styled.div`
   background-color: white;
   border: none;
   border-radius: 6px;
-  box-shadow: 0 7px 64px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 7px 64px rgba(0, 0, 0, 0.2);
 `
 
 const Line = styled.div`

@@ -6,25 +6,29 @@ import DropDownList from "./DropDownList";
 import StudentList from "../../../store/StudentList";
 
 const SelectFilter = () => {
-
+    // @ts-ignore
+    const choice: string = StudentList.filter.find(option => option.checked == true).text;
     const [isMobile, setIsMobile] = useState<boolean>(false);
     const [hover, setHover] = useState<boolean>(false);
 
-    // @ts-ignore
-    const choice: string = StudentList.filter.find(option => option.checked == true).text;
-
     useLayoutEffect(() => {
         setIsMobile(AppOptions.isMobile);
-    }, [AppOptions.width, StudentList.filter])
+    }, [AppOptions.width, StudentList.filter, choice])
 
     const handleHover = () => {
-        setHover(true);
+        if (!isMobile) {
+            setHover(true);
+        }
     }
 
     const handleLeave = () => {
         setHover(false);
     }
 
+    const handleClick = () => {
+        setHover(!hover);
+        console.log(hover);
+    }
     return (
         <InputContainer
             pointer
@@ -32,7 +36,7 @@ const SelectFilter = () => {
             w={isMobile ? '54px' : '180px'}
             onMouseEnter={handleHover}
             onMouseLeave={handleLeave}
-            onClick={handleLeave}
+            onClick={handleClick}
         >
             <FlexContainer
                 jc={isMobile ? 'center' : 'space-between'}
