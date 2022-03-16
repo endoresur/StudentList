@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {DropDown, Line} from "../../../styles/DropDownList";
-import {filterOptions, IFilterOption} from "../../../types/types";
+import {IFilterOption} from "../../../types/types";
 import {FlexContainer} from "../../../styles/Containers";
 import check from "../../../assets/images/check.png"
 import StudentList from "../../../store/StudentList";

@@ -10,5 +10,5 @@ export const extract = () => {
         .then((resp) => {
             let list: IStudent[] = resp.data.students;
             StudentList.setList = fieldEdit(list);
-        })
+        });
 }

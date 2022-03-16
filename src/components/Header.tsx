@@ -4,9 +4,7 @@ import {LogoIcon} from "../styles/GraphicElements";
 import AppOptions from "../store/AppOptions";
 
 const Header = () => {
-
     const isMobile = AppOptions.isMobile;
-
     return (
         <HeaderContainer>
             <WrapperContainer>

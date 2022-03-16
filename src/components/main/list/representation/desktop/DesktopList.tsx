@@ -26,8 +26,7 @@ const DesktopList: React.FC<StudentComponentProps> = ({students}) => {
                 </tbody>
             </Table>
         </>
-    )
-        ;
+    );
 };
 
 export default DesktopList;

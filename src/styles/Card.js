@@ -18,8 +18,7 @@ const CardLine = styled.tr`
 const CardHeadCell = styled.th`
   text-align: start;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
-
+  
   &:first-child{
     text-align: center;
     padding: 15px 0 10px 0;

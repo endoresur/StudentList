@@ -5,7 +5,6 @@ import {AvatarIcon, ColorCircle} from "../../../../../styles/GraphicElements";
 import DeleteButton from "../../../../utilities/DeleteButton";
 
 const TableEntry: React.FC<StudentProps> = ({student}) => {
-
     return (
             <>
                 <td><AvatarIcon src={student.avatar}/></td>

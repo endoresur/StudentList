@@ -59,7 +59,6 @@ const TrashIcon = styled.div`
     max-width: 15px;    
     border-radius: 0;
   }
-  
 `
 
 export {LogoIcon, ColorCircle, TrashIcon, AvatarIcon};

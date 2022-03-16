@@ -1,12 +1,9 @@
 import React from 'react';
-
 import {FlexContainer, TextContainer} from "../../../styles/Containers";
 import AppOptions from "../../../store/AppOptions";
 
 const Head = () => {
-
     const isMobile = AppOptions.isMobile;
-
     return (
         <>
             <FlexContainer
