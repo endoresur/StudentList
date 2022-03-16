@@ -27,7 +27,6 @@ const SelectFilter = () => {
 
     const handleClick = () => {
         setHover(!hover);
-        console.log(hover);
     }
     return (
         <InputContainer
