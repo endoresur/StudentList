@@ -2,15 +2,15 @@ import { makeAutoObservable } from "mobx"
 import OptionsStore from "./OptionsStore";
 import StudentsStore from "./StudentsStore";
 
-class RootStore {
-    students;
-    options;
+export default class RootStore {
+    studentsStore;
+    optionsStore;
 
     constructor() {
         makeAutoObservable(this);
-        this.students = StudentsStore;
-        this.options = OptionsStore;        
+        this.studentsStore = new StudentsStore(this)
+        this.optionsStore = new OptionsStore(this)
     }
 }
 
-export default new RootStore();
+export const rootStore = new RootStore()

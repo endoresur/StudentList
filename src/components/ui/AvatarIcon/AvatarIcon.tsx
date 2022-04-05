@@ -1,5 +1,5 @@
 import { FC } from "react"
-import * as SC from "./styles.d"
+import * as SC from "./styles"
 
 type Props = {
     src: string,

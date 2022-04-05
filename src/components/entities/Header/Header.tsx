@@ -1,10 +1,12 @@
-import RootStore from "../../../stores/RootStore"
 
 import * as SC from "./styles.d"
 import WrapperContainer from "../../ui/WrapperContainer"
+import { useStore } from "../../../hooks/useStore";
 
 const Header = () => {
-    const isMobile = RootStore.options.isMobile
+
+    const store = useStore()
+    const isMobile = store.optionsStore.isMobile
 
     return (
         <SC.HeaderRoot>

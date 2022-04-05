@@ -1,25 +1,26 @@
-import { useLayoutEffect } from "react"
-
+import {FC, useLayoutEffect } from "react"
 import Header from "../Header"
-import IndexPage from '../../../pages/Index/IndexPage'
-
 import { useWindowSize } from "../../../hooks/useWindowSize"
-import RootStore from "../../../stores/RootStore"
+import { useStore } from "../../../hooks/useStore"
+import IndexPage from "../../../pages/Index";
+import { observer } from "mobx-react-lite";
 
-const Layout = () => {
+const Layout: FC = observer(({children}) => {
 
     const [width, height] = useWindowSize()
+    const store = useStore();
 
     useLayoutEffect(() => {
-        RootStore.options.setWidth = width
+        store.optionsStore.setWidth = width
     }, [width])
 
     return (
         <>
             <Header />
-            <IndexPage />
+            <IndexPage/>
+            {children}
         </>
-    );
-};
+    )
+})
 
 export default Layout

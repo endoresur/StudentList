@@ -2,18 +2,22 @@ import alphabet from "../constants/alphabet";
 import specialty from "../constants/specialitions";
 import { Student } from "../models/EntityModels/students";
 
-export const fieldNormalize = (list: Student[]): Student[] => {
-    return list.map((el) => {
-        el.specialty = specialtyEdit(el.specialty);
-        el.group = groupEdit(el.group);
-        el.birthday = ageEdit(el.birthday);
-        return el;
+export const listNormalize = (list: Student[]): Student[] => {
+    return list.map((el) => {        
+        return studentNormalize(el);
     });
 }
 
+export const studentNormalize = (el: Student): Student => {
+    el.specialty = specialtyEdit(el.specialty);
+    el.group = groupEdit(el.group);
+    el.birthday = ageEdit(el.birthday);
+    return el;
+}
+
 const specialtyEdit = (str: string): string => {
-    if (specialty.has(str)) {
-        str = String(specialty.get(str));
+    if (str in specialty) {
+        str = String(new Map(Object.entries(specialty)).get(str))
     }
     return str;
 }
@@ -21,8 +25,8 @@ const specialtyEdit = (str: string): string => {
 const groupEdit = (group: string): string => {
     let arr = group.split('');
     arr = arr.map((char) => {
-        if(alphabet.has(char)) {
-            char = String(alphabet.get(char));
+        if (char in alphabet) {
+            char = String(new Map(Object.entries(alphabet)).get(char));
         }
         return char;
     })
@@ -31,7 +35,7 @@ const groupEdit = (group: string): string => {
 }
 
 const ageEdit = (date: string): string => {
-    let arr = date.split('-').map((el) => {return Number(el)});
+    let arr = date.split('-').map((el) => { return Number(el) });
     let age = 0;
     let now = new Date();
     age = now.getFullYear() - arr[0] - 1;

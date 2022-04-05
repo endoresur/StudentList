@@ -2,16 +2,17 @@ import { FC } from "react"
 import DeleteButton from "../../../../../components/ui/DeleteButton"
 import { ageWordDeterminant } from "../../../../../utilities/AgeWordDeterminant"
 import star from "../../../../../assets/images/star.png"
-import * as SC from "./styles.d"
+import * as SC from "./styles"
 import AvatarIcon from "../../../../../components/ui/AvatarIcon"
 import ColorCircle from "../../../../../components/ui/ColorCircle"
 import { Student } from "../../../../../models/EntityModels/students"
+import { observer } from "mobx-react-lite"
 
 type Props = {
     student: Student
 }
 
-const MobileItem: FC<Props> = ({ student }) => {
+const MobileItem: FC<Props> = observer(({ student }) => {
     return (
         <SC.MobileItemRoot>
             <SC.Card>
@@ -20,7 +21,7 @@ const MobileItem: FC<Props> = ({ student }) => {
                     <div>
                         {student.name}
                         <SC.Container>
-                        <ColorCircle color={student.color} mini />
+                        <ColorCircle color={ student.color} isMobile />
                         <img src={star} height='10px' width='10px' />
                         {student.rating}
                         </SC.Container>
@@ -39,6 +40,6 @@ const MobileItem: FC<Props> = ({ student }) => {
             </SC.Card>
         </SC.MobileItemRoot>
     )
-}
+})
 
 export default MobileItem

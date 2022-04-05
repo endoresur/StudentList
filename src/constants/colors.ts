@@ -1,10 +1,20 @@
+export enum ColorTypes {
+    Green = 'green',
+    Blue = 'blue',
+    Black = 'black',
+    Yellow = 'yellow',
+    Red = 'red',
+    Orange = 'orange'
+}
+
 const colors = new Map([
-    ['green', '#83C872'],
-    ['blue', '#49C2E8'],
-    ['black', '#000000'],
-    ['yellow', '#F7FB53'],
-    ['red', '#E25B5B'],
-    ['orange', '#EFA638'],
+    [ColorTypes.Green, '#83C872'],
+    [ColorTypes.Blue, '#49C2E8'],
+    [ColorTypes.Black, '#000000'],
+    [ColorTypes.Yellow, '#F7FB53'],
+    [ColorTypes.Red, '#E25B5B'],
+    [ColorTypes.Orange, '#EFA638'],
 ])
 
 export default colors
+

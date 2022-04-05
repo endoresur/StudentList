@@ -1,11 +1,14 @@
 import {makeAutoObservable} from "mobx"
 import { size } from "../../styles/mediaQueries";
+import RootStore from "../RootStore";
 
 class OptionsStore {
+    private _rootStore;
     private _screenWidth: number = 0;
     private _mobile: boolean = false;
 
-    constructor() {
+    constructor(rootStore: RootStore) {
+        this._rootStore = rootStore
         makeAutoObservable(this);
     }
 
@@ -27,4 +30,4 @@ class OptionsStore {
     }
 }
 
-export default new OptionsStore();
+export default OptionsStore

@@ -1,26 +1,27 @@
-import {configure, makeAutoObservable} from "mobx";
-import { getStudents } from "../../api/students";
+import { action, configure, makeAutoObservable} from "mobx";
 import { Student } from "../../models/EntityModels/students";
 import {filterDirection, filterOptions, filterType, IFilterOption} from "../../types/types";
-import { fieldNormalize } from "../../utilities/FieldNormalizer";
+import RootStore from "../RootStore";
 
 configure({
     useProxies: "never"
 })
 
 class StudentsStore {
+    private _rootStore: RootStore;
     private _list: Student[] = [];
     private _filteredList: Student[] = [];
     private _filter: IFilterOption[] = filterOptions;
 
-    constructor() {
-        makeAutoObservable(this);
-        this.updateList();
-    }
+    constructor(rootStore: RootStore) {
+        this._rootStore = rootStore;
 
-    private updateList() {
-        getStudents().then((res) => {
-            this.setList = fieldNormalize(res.data.students)            
+        makeAutoObservable(this, {
+            setList: action,
+            deleteStudent: action,
+            search: action,
+            changeFilter: action,
+            setFilter: action
         })
     }
 
@@ -28,7 +29,7 @@ class StudentsStore {
         return this._filteredList;
     }
 
-    set setList(list: Student[]) {
+    setList(list: Student[]) {
         this._list = list;
         this._filteredList = this._list;
     }
@@ -48,7 +49,7 @@ class StudentsStore {
         })
     }
 
-    get filter() {
+    get getFilter() {
         return this._filter;
     }
 
@@ -57,13 +58,13 @@ class StudentsStore {
             element.checked = false;
             if (element.id === id) {
                 element.checked = true;
-                this.setFilter = element;
+                this.setFilter(element)
             }
             return element;
         })
     }
 
-    set setFilter(filter: IFilterOption) {
+    setFilter(filter: IFilterOption) {
         this._filteredList.sort((first, second) => {
             if (filter.direction === filterDirection.default) {
                 return first.id - second.id;
@@ -88,7 +89,6 @@ class StudentsStore {
         })
 
     }
-
 }
 
-export default new StudentsStore();
+export default StudentsStore;

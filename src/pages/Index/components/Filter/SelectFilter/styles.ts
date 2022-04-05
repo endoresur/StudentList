@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const SelectFilterRoot = styled.div`
+export const SelectFilterRoot = styled.div<{isMobile: boolean}>`
     position: relative;
 
     height: 48px;

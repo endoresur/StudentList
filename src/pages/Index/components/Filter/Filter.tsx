@@ -2,7 +2,7 @@ import { FC } from "react"
 import InputFilter from "./InputFilter"
 import SelectFilter from "./SelectFilter"
 
-import * as SC from "./styles.d"
+import * as SC from "./styles"
 
 const Filter: FC = () => {
     return (

@@ -1,3 +1,5 @@
+import { ColorTypes } from "../../constants/colors"
+
 export type Student = {
     id: number,
     email: string,
@@ -5,12 +7,12 @@ export type Student = {
     sex: string,
     specialty: string,
     group: string,
-    color: string,
+    color: ColorTypes,
     rating: number,
     birthday: string,
     avatar: string,
 }
 
 export type Students = {
-    data: Student[]
+    students: Student[]
 }

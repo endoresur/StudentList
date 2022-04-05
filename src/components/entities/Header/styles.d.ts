@@ -30,7 +30,7 @@ export const HeaderContainer = styled.div`
   flex-direction: row;
 `
 
-export const LogoIcon = styled.div`
+export const LogoIcon = styled.div<{isMobile: boolean}>`
   position: relative;
   width: 42px;
   height: 42px;  

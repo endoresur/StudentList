@@ -1,15 +1,16 @@
+import { observer } from "mobx-react-lite"
 import { FC } from "react"
 import AvatarIcon from "../../../../../components/ui/AvatarIcon"
 import ColorCircle from "../../../../../components/ui/ColorCircle"
 import DeleteButton from "../../../../../components/ui/DeleteButton"
 import { Student } from "../../../../../models/EntityModels/students"
-import * as SC from "./styles.d"
+import * as SC from "./styles"
 
 type Props = {
     student: Student
 }
 
-const DesktopItem: FC<Props> = ({ student }) => {
+const DesktopItem: FC<Props> = observer(({ student }) => {
     return (
         <SC.DesktopItemRoot>
             <SC.DesktopItemLine>
@@ -31,6 +32,6 @@ const DesktopItem: FC<Props> = ({ student }) => {
             </SC.DesktopItemLine>
         </SC.DesktopItemRoot>
     )
-}
+})
 
 export default DesktopItem

@@ -1,17 +1,18 @@
 import { FC, useState } from "react"
 
-import { IFilterOption } from "../../../../../types/types";
 import check from "../../../../../assets/images/check.png"
 
-import * as SC from "./styles.d"
-import RootStore from "../../../../../stores/RootStore";
+import * as SC from "./styles"
+import { useStore } from "../../../../../hooks/useStore";
+import { observer } from "mobx-react-lite";
 
-const DropDownList: FC = () => {
+const DropDownList: FC = observer(() => {
 
-    const [options, setOptions] = useState<IFilterOption[]>(RootStore.students.filter);
+    const store = useStore()
+    const [options, setOptions] = useState(store.studentsStore.getFilter);
     
     const handleClick = (id: number) => {
-        RootStore.students.changeFilter(id);
+        store.studentsStore.changeFilter(id);
     }
 
     return(
@@ -29,6 +30,6 @@ const DropDownList: FC = () => {
             })}
         </SC.DropDownListRoot>
     )
-}
+})
 
 export default DropDownList

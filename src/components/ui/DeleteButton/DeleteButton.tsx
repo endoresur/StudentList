@@ -1,18 +1,21 @@
+import { observer } from 'mobx-react-lite'
 import React from 'react'
 import trash from "../../../assets/images/trash.png"
+import { useStore } from '../../../hooks/useStore'
 import { Student } from '../../../models/EntityModels/students'
-import RootStore from '../../../stores/RootStore'
 
-import * as SC from './styles.d'
+import * as SC from './styles'
 
 type Props = {
     student: Student
 }
 
-const DeleteButton: React.FC<Props> = ({student}) => {
+const DeleteButton: React.FC<Props> = observer(({student}) => {
+
+    const store = useStore()
 
     const handleDelete = () => {
-        RootStore.students.deleteStudent(student)
+        store.studentsStore.deleteStudent(student)
     }
 
     return (
@@ -20,6 +23,6 @@ const DeleteButton: React.FC<Props> = ({student}) => {
             <img src={trash}/>
         </SC.DeleteIconRoot>
     );
-};
+})
 
 export default DeleteButton

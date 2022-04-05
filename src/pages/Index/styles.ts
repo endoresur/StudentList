@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PageTitle = styled.span`
+export const PageTitle = styled.span<{isMobile: boolean}>`
     display: inline-block;
     margin: 75px 0 47px;
     //margin: 22px 0 40px;

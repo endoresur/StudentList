@@ -1,14 +1,15 @@
 import { FC } from "react"
-import * as SC from "./styles.d"
+import Colors, { ColorTypes } from "../../../constants/colors"
+import * as SC from "./styles"
 
 type Props = {
-    color: string,
-    mini?: boolean
+    color: ColorTypes,
+    isMobile?: boolean
 }
 
-const ColorCircle: FC<Props> = ({color, mini = false}) => {
+const ColorCircle: FC<Props> = ({color, isMobile = false}) => {
     return(
-        <SC.ColorCircleRoot bc={color} mini={mini}/>
+        <SC.ColorCircleRoot color={color} isMobile={isMobile}/>
     )
 }
 

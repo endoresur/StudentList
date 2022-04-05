@@ -8,7 +8,7 @@ export const UserListRoot = styled.div`
     //background-color: aliceblue;
 `
 
-export const UserItemsContainer = styled.div`
+export const UserItemsContainer = styled.div<{isMobile: boolean}>`
     background-color: ${props => props.isMobile? 'rgb(0)' : '#fff'};
     border-radius: 6px;
     padding: ${props => props.isMobile? '0' : '26px 0 5px 0'};
